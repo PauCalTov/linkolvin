@@ -13,6 +13,7 @@ class IndexController extends AbstractController
     #[Route('/', name: 'index')]
     public function index()
     {
-        return $this->render('index/index.html.twig');
+        return $this->redirect('https://localhost:8080');
+        //return $this->render('index/index.html.twig');
     }
 }
