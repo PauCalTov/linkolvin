@@ -16,22 +16,6 @@
             :key="oferta.id"
             :infoOferta="oferta">
           </FichaOferta>
-          <!-- <FichaOferta v-for="ofertaAsix in asix"
-            :key="ofertaAsix.id"
-            :infoOferta="ofertaAsix">
-          </FichaOferta>
-          <FichaOferta v-for="ofertaDaw in daw"
-            :key="ofertaDaw.id"
-            :infoOferta="ofertaDaw">
-          </FichaOferta>
-          <FichaOferta v-for="ofertaDam in dam"
-            :key="ofertaDam.id"
-            :infoOferta="ofertaDam">
-          </FichaOferta>
-          <FichaOferta v-for="ofertaSmx in smx"
-            :key="ofertaSmx.id"
-            :infoOferta="ofertaSmx">
-          </FichaOferta> -->
         </b-card-group>
       </b-row>
     </div>
