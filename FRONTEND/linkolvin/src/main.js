@@ -4,6 +4,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 import App from './App.vue'
+import "@/plugins/echarts";
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
