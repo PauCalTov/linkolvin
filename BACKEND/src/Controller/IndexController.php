@@ -23,7 +23,7 @@ class IndexController extends AbstractController
             return $this->redirectToRoute('empresa_new');
        }
        else{
-            return $this->redirectToRoute('index');
+            return $this->redirect('http://localhost:8080');
        }
     }
 }
