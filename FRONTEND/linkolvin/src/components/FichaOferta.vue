@@ -18,7 +18,6 @@
         <small class="text-muted">Last updated 5 mins ago</small>
     </b-card>
 </template>
-
 <script>
 
 export default {
