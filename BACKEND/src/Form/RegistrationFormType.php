@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
+use Symfony\Component\Validator\Constraints\IsFalse;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
@@ -20,11 +21,7 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add('isCompany', CheckboxType::class, [
                 'mapped' => false,
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'You should agree to our terms.',
-                    ]),
-                ],
+                'required' => false,                
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
