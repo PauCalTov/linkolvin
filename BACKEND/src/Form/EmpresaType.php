@@ -15,15 +15,15 @@ class EmpresaType extends AbstractType
             ->add('nom')
             ->add('tipus')
             ->add('logo')
-            ->add('correu')
-            ->add('usuari')
+            //->add('correu')
+            //->add('usuari')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Empresa::class,
+            'data_class' => Empresa::class,            
         ]);
     }
 }

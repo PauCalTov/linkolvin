@@ -25,12 +25,19 @@ class EmpresaController extends AbstractController
     public function new(Request $request): Response
     {
         $empresa = new Empresa();
+        $empresa->setCorreu($this->getUser()->getEmail());
+        $empresa->setUsuari($this->getUser());
+
+        $user = $this->getUser();
+        $user->setIsVerified(1);
+
         $form = $this->createForm(EmpresaType::class, $empresa);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($empresa);
+            $entityManager->persist($user);
             $entityManager->flush();
 
             return $this->redirectToRoute('empresa_index');
