@@ -1,7 +1,11 @@
 <template>
-  <div>
     <b-card 
         :title="infoOferta.titol"
+        :img-src="`https://source.unsplash.com/featured/?${infoOferta.ubicacio}`"
+        img-alt="Image"
+        img-top
+        img-height="200"
+        img-width="200"
         tag="article"
         style="max-width: 20rem"
         class="mb-2"
@@ -11,8 +15,8 @@
         <b-card-text>
             {{ this.infoOferta.descripcio }}
         </b-card-text>
+        <small class="text-muted">Last updated 5 mins ago</small>
     </b-card>
-  </div>
 </template>
 
 <script>

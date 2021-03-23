@@ -2,7 +2,7 @@
   <div>
     <Header/>
     <div id="principal">
-      <h1>INTERFAZ INICIAL</h1>
+      <h1>OFERTAS ACTUALES</h1>
       <b-dropdown text="Filtrar por categoría" class="m-md-2">
         <b-dropdown-item-button @click="todo">TODO</b-dropdown-item-button>
         <b-dropdown-item-button @click="asix">ASIX</b-dropdown-item-button>
