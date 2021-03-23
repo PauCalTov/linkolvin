@@ -17,7 +17,7 @@
 export default {
   name: 'FichaOferta',
   props: {
-    infoOferta: Object,
+    infoOferta: {}
   }
 }
 </script>
