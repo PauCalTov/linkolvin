@@ -25,6 +25,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     use TargetPathTrait;
 
     public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_COMPANY_ROUTE = 'empresa_new';
 
     private $entityManager;
     private $urlGenerator;
@@ -50,6 +51,8 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         $credentials = [
             'email' => $request->request->get('email'),
             'password' => $request->request->get('password'),
+            'roles' => $request->request->get('roles'),
+            'is_verified' => $request->get('is_verified'),
             'csrf_token' => $request->request->get('_csrf_token'),
         ];
         $request->getSession()->set(
@@ -94,13 +97,14 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
-        }
+        }        
 
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
 
         // redirect to some "app_homepage" route - of wherever you want
-        return new RedirectResponse($this->urlGenerator->generate('index'));
+        
+        return new RedirectResponse($this->urlGenerator->generate('logged'));
     }
 
     protected function getLoginUrl()
